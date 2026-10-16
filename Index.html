@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEBANSHI SINGH | Official Portfolio & Author Studio</title>
+  <meta name="description" content="Official personal website and publishing portal of Debanshi Singh. Read articles, submit direct queries, explore curated links, and connect.">
+  <meta name="author" content="Debanshi Singh">
+  <meta name="robots" content="index, follow">
+
+  <!-- Premium Typography & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Cabinet+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #070913;
+      --card-bg: rgba(17, 24, 48, 0.65);
+      --card-hover: rgba(26, 36, 70, 0.85);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --card-border-glow: rgba(129, 140, 248, 0.35);
+      
+      --neon-purple: #8b5cf6;
+      --neon-cyan: #06b6d4;
+      --neon-pink: #ec4899;
+      --neon-emerald: #10b981;
+      --neon-amber: #f59e0b;
+      
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+      --text-muted: #64748b;
+      
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .glow-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: -1;
+      pointer-events: none;
+      animation: float 14s infinite alternate ease-in-out;
+    }
+    .orb-1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(139, 92, 246, 0.38), transparent 70%); top: -100px; left: -150px; }
+    .orb-2 { width: 550px; height: 550px; background: radial-gradient(circle, rgba(6, 182, 212, 0.3), transparent 70%); top: 40%; right: -180px; animation-duration: 18s; }
+    .orb-3 { width: 450px; height: 450px; background: radial-gradient(circle, rgba(236, 72, 153, 0.22), transparent 70%); bottom: -80px; left: 20%; animation-duration: 16s; }
+
+    @keyframes float {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(40px, 60px) scale(1.1); }
+    }
+
+    .grid-overlay {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(7, 9, 19, 0.78);
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 6%;
+      z-index: 100;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+    .brand-logo .monogram {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--neon-purple), var(--neon-cyan));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      border-radius: 14px;
+      box-shadow: 0 0 24px rgba(139, 92, 246, 0.5);
+    }
+    .brand-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(120deg, #ffffff, #c7d2fe, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+    }
+    .nav-links a {
+      color: var(--text-sub);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.25s;
+      position: relative;
+    }
+    .nav-links a:hover { color: #fff; }
+
+    .author-gate-btn {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(6, 182, 212, 0.15));
+      color: #c7d2fe;
+      border: 1px solid rgba(139, 92, 246, 0.4);
+      padding: 0.6rem 1.3rem;
+      border-radius: 40px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .author-gate-btn:hover {
+      background: linear-gradient(135deg, var(--neon-purple), var(--neon-cyan));
+      color: #fff;
+      box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
+      transform: translateY(-2px);
+    }
+
+    #adminControls {
+      display: none;
+      background: linear-gradient(90deg, #1e1b4b, #0f172a, #132442);
+      border-bottom: 2px solid var(--neon-cyan);
+      padding: 0.85rem 6%;
+      align-items: center;
+      justify-content: space-between;
+      animation: slideDown 0.35s ease;
+      position: sticky;
+      top: 73px;
+      z-index: 99;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+    .admin-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--neon-cyan);
+      letter-spacing: 0.5px;
+    }
+    .admin-badge .dot {
+      width: 10px;
+      height: 10px;
+      background: var(--neon-emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--neon-emerald);
+    }
+    .admin-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-admin {
+      background: linear-gradient(135deg, var(--neon-purple), #6366f1);
+      color: white;
+      border: none;
+      padding: 0.5rem 1.05rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.25s;
+    }
+    .btn-admin.logout {
+      background: rgba(239, 68, 68, 0.18);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4.5rem 1rem 3rem;
+      position: relative;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--neon-cyan);
+      margin-bottom: 1.8rem;
+    }
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.6rem, 7vw, 4.8rem);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 .gradient-text {
+      background: linear-gradient(135deg, #ffffff 10%, #a5b4fc 45%, #38bdf8 75%, #f472b6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-sub);
+      max-width: 720px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-quick-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+    .btn-action-primary {
+      background: linear-gradient(135deg, var(--neon-purple), var(--neon-cyan));
+      color: #fff;
+      padding: 0.85rem 1.8rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 0 25px rgba(139, 92, 246, 0.45);
+    }
+    .btn-action-glass {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 0.85rem 1.8rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-header-box { margin-bottom: 2rem; }
+    .section-tag {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--neon-cyan);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .about-section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(25px);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin: 4rem 0;
+      position: relative;
+    }
+    .about-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan), var(--neon-pink));
+    }
+    .about-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .about-content {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      white-space: pre-line;
+    }
+
+    .contact-query-wrapper {
+      margin: 5rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 2.2rem;
+    }
+
+    .contact-hub-card {
+      background: linear-gradient(145deg, rgba(17, 24, 48, 0.85), rgba(12, 17, 34, 0.95));
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .email-highlight-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .email-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--neon-cyan);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .email-address {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      word-break: break-all;
+      margin-bottom: 1rem;
+    }
+    .email-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-copy {
+      background: rgba(139, 92, 246, 0.2);
+      border: 1px solid rgba(139, 92, 246, 0.4);
+      color: #c7d2fe;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-mailto {
+      background: rgba(6, 182, 212, 0.2);
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      color: #67e8f9;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .query-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    .form-grid.full { grid-column: 1 / -1; }
+    .query-group { display: flex; flex-direction: column; gap: 0.45rem; }
+    .query-group label { font-size: 0.85rem; font-weight: 600; color: var(--text-sub); }
+    .query-input {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1.1rem;
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .query-input:focus { border-color: var(--neon-cyan); }
+    textarea.query-input { resize: vertical; min-height: 120px; }
+    .btn-send-query {
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.95rem 2rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+    .query-status {
+      display: none;
+      margin-top: 1rem;
+      padding: 0.85rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    .query-status.success {
+      display: block;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid var(--neon-emerald);
+      color: #6ee7b7;
+    }
+
+    .resources-section { margin: 5rem 0; }
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.8rem;
+    }
+    .resource-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .resource-top { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0.9rem; }
+    .resource-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(139, 92, 246, 0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--neon-cyan);
+      font-size: 1.2rem;
+    }
+    .resource-info h4 { font-size: 1.1rem; font-weight: 700; color: #fff; }
+    .resource-info span { font-size: 0.75rem; color: var(--neon-cyan); text-transform: uppercase; font-weight: 700; }
+    .resource-desc { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 1.5rem; }
+    .resource-bottom { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 1rem; }
+    .resource-link-btn { color: #c7d2fe; text-decoration: none; font-size: 0.88rem; font-weight: 700; }
+
+    .topics-wrapper { margin: 5rem 0 1.8rem; }
+    .topics-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1.2rem; }
+    .topic-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      padding: 0.6rem 1.3rem;
+      border-radius: 30px;
+      color: var(--text-sub);
+      cursor: pointer;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+    .topic-pill.active, .topic-pill:hover {
+      background: linear-gradient(135deg, var(--neon-purple), var(--neon-cyan));
+      color: #fff;
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 1.8rem;
+    }
+    .article-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    .article-tag { font-size: 0.78rem; font-weight: 800; text-transform: uppercase; color: var(--neon-cyan); margin-bottom: 0.8rem; }
+    .article-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.35rem; font-weight: 700; margin-bottom: 0.9rem; color: #fff; }
+    .article-snippet { color: var(--text-sub); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.8rem; }
+    .article-meta { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 1.1rem; font-size: 0.85rem; color: var(--text-muted); }
+    .card-actions { display: none; gap: 8px; }
+    .admin-mode .card-actions { display: flex; }
+    .btn-icon {
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: var(--text-main);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .btn-icon.del:hover { background: #ef4444; color: white; }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 6, 14, 0.85);
+      backdrop-filter: blur(15px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 1.5rem;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-window {
+      background: #0f1426;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 650px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2.2rem;
+    }
+    .modal-window h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-size: 0.88rem; color: var(--text-sub); margin-bottom: 0.45rem; }
+    .form-control {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1.1rem;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .form-control:focus { border-color: var(--neon-cyan); }
+    textarea.form-control { resize: vertical; min-height: 160px; }
+    .modal-btns { display: flex; justify-content: flex-end; gap: 12px; margin-top: 1.8rem; }
+    .btn-secondary { background: rgba(255, 255, 255, 0.08); color: var(--text-main); border: none; padding: 0.7rem 1.4rem; border-radius: 10px; cursor: pointer; }
+
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 3.5rem 6% 2.5rem;
+      margin-top: 6rem;
+      text-align: center;
+    }
+    .footer-brand { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 800; margin-bottom: 0.8rem; }
+    .footer-contact-link { color: var(--neon-cyan); text-decoration: none; font-size: 1.05rem; }
+
+    @media (max-width: 900px) {
+      .contact-query-wrapper { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .about-section, .contact-hub-card, .query-card { padding: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+  <div class="grid-overlay"></div>
+
+  <nav>
+    <a href="#" class="brand-logo">
+      <div class="monogram">DS</div>
+      <div class="brand-name">DEBANSHI SINGH</div>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#query">Send Query</a>
+      <a href="#contact">Contact</a>
+      <a href="#resources">Resources</a>
+      <a href="#articles">Articles</a>
+    </div>
+    <button class="author-gate-btn" onclick="openGateModal()">
+      <i class="fa-solid fa-lock"></i> Author Portal
+    </button>
+  </nav>
+
+  <div id="adminControls">
+    <div class="admin-badge">
+      <div class="dot"></div> Debanshi Singh Studio (Active Mode)
+    </div>
+    <div class="admin-actions">
+      <button class="btn-admin" onclick="openTopicModal()"><i class="fa-solid fa-folder-plus"></i> New Topic</button>
+      <button class="btn-admin" onclick="openArticleModal()"><i class="fa-solid fa-pen-nib"></i> Write Article</button>
+      <button class="btn-admin" onclick="openResourceModal()"><i class="fa-solid fa-link"></i> Upload Link</button>
+      <button class="btn-admin logout" onclick="lockAdmin()"><i class="fa-solid fa-right-from-bracket"></i> Lock</button>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <header class="hero">
+      <div class="hero-badge">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> Official Digital Space & Research Archive
+      </div>
+      <h1><span class="gradient-text">DEBANSHI SINGH</span></h1>
+      <p>Original perspectives, curated academic & professional resources, and direct communication.</p>
+
+      <div class="hero-quick-actions">
+        <a href="#query" class="btn-action-primary">
+          <i class="fa-solid fa-paper-plane"></i> Send a Direct Query
+        </a>
+        <a href="#contact" class="btn-action-glass">
+          <i class="fa-solid fa-envelope"></i> Contact Information
+        </a>
+      </div>
+    </header>
+
+    <section class="about-section" id="about">
+      <div class="about-header">
+        <div>
+          <div class="section-tag"><i class="fa-solid fa-user-astronaut"></i> Biography</div>
+          <h2 class="section-title">About Me</h2>
+        </div>
+        <button id="editBioBtn" class="btn-admin" style="display:none;" onclick="openBioModal()">
+          <i class="fa-solid fa-pen"></i> Edit Bio
+        </button>
+      </div>
+      <div class="about-content" id="bioText">
+        Welcome to my personal digital platform. I am Debanshi Singh.
+
+        This platform serves as my central repository for original perspectives, research reflections, and carefully curated resources. Only articles and materials reviewed and verified by me are published here.
+
+        You can easily reach out through the official contact section or send a formal inquiry using the query portal below.
+      </div>
+    </section>
+
+    <div class="section-header-box" id="contact" style="text-align: center; margin-top: 5rem;">
+      <div class="section-tag" style="justify-content: center;"><i class="fa-solid fa-satellite-dish"></i> Connect Directly</div>
+      <h2 class="section-title">Get In Touch & Submit Queries</h2>
+    </div>
+
+    <div class="contact-query-wrapper">
+      <div class="contact-hub-card">
+        <div>
+          <div class="section-tag"><i class="fa-solid fa-id-card"></i> Official Contact</div>
+          <h3 style="font-family: 'Space Grotesk'; font-size: 1.8rem; margin: 0.4rem 0 1rem; color: #fff;">Direct Communication</h3>
+          <p style="color: var(--text-sub); font-size: 0.95rem; line-height: 1.6;">
+            My official email is open for academic discussions, collaborative inquiries, and professional communication.
+          </p>
+
+          <div class="email-highlight-box">
+            <div class="email-label"><i class="fa-solid fa-circle-check"></i> Verified Email Address</div>
+            <div class="email-address">singhbhvya.2117@gmail.com</div>
+            <div class="email-actions">
+              <button class="btn-copy" onclick="copyEmail()">
+                <i class="fa-solid fa-copy"></i> <span id="copyBtnText">Copy Email</span>
+              </button>
+              <a href="mailto:singhbhvya.2117@gmail.com" class="btn-mailto">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Mail App
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="query-card" id="query">
+        <div class="section-tag"><i class="fa-solid fa-message"></i> Send Query</div>
+        <h3 style="font-family: 'Space Grotesk'; font-size: 1.8rem; margin: 0.4rem 0 0.5rem; color: #fff;">Submit Your Inquiry</h3>
+
+        <form onsubmit="handleQuerySubmit(event)">
+          <div class="form-grid">
+            <div class="query-group">
+              <label>Your Name *</label>
+              <input type="text" id="qName" class="query-input" placeholder="Your Name" required>
+            </div>
+            <div class="query-group">
+              <label>Your Email *</label>
+              <input type="email" id="qEmail" class="query-input" placeholder="Your Email" required>
+            </div>
+            <div class="query-group">
+              <label>Category</label>
+              <select id="qCategory" class="query-input" style="background:#131a33;">
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Article Feedback">Article Feedback</option>
+                <option value="Research & Collaboration">Research & Collaboration</option>
+              </select>
+            </div>
+            <div class="query-group">
+              <label>Subject</label>
+              <input type="text" id="qSubject" class="query-input" placeholder="Subject" required>
+            </div>
+            <div class="query-group form-grid full">
+              <label>Message *</label>
+              <textarea id="qMessage" class="query-input" placeholder="Write your message..." required></textarea>
+            </div>
+            <div class="form-grid full">
+              <button type="submit" class="btn-send-query">
+                <i class="fa-solid fa-paper-plane"></i> Dispatch Query
+              </button>
+            </div>
+          </div>
+          <div id="querySuccessMsg" class="query-status success">
+            Prepared for singhbhvya.2117@gmail.com!
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <section class="resources-section" id="resources">
+      <div class="section-header-box">
+        <div class="section-tag"><i class="fa-solid fa-bookmark"></i> Curated Repository</div>
+        <h2 class="section-title">Verified Links & Resources</h2>
+      </div>
+      <div class="resources-grid" id="resourcesGrid"></div>
+    </section>
+
+    <section class="topics-wrapper" id="articles">
+      <div class="section-header-box">
+        <div class="section-tag"><i class="fa-solid fa-book-open"></i> Publications</div>
+        <h2 class="section-title">Articles & Written Works</h2>
+      </div>
+      <div class="topics-list" id="topicsContainer">
+        <div class="topic-pill active" onclick="filterArticles('all', this)">All Topics</div>
+      </div>
+      <div class="articles-grid" id="articlesGrid"></div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-brand">DEBANSHI SINGH</div>
+    <div>
+      <a href="mailto:singhbhvya.2117@gmail.com" class="footer-contact-link">
+        <i class="fa-solid fa-envelope"></i> singhbhvya.2117@gmail.com
+      </a>
+    </div>
+    <div style="color:var(--text-muted); font-size:0.88rem; margin-top:10px;">&copy; <span id="currentYear"></span> DEBANSHI SINGH. All rights reserved.</div>
+  </footer>
+
+  <!-- Passcode Gate Modal (Key: 17@21) -->
+  <div class="modal-overlay" id="gateModal">
+    <div class="modal-window" style="max-width: 400px; text-align: center;">
+      <h3>Author Authentication</h3>
+      <p style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 1.5rem;">Enter passcode to access publishing tools.</p>
+      <div class="form-group">
+        <input type="password" id="gatePass" class="form-control" placeholder="••••••••" style="text-align: center; font-size: 1.3rem; letter-spacing: 5px;" onkeydown="if(event.key==='Enter') unlockAdmin()">
+      </div>
+      <div class="modal-btns" style="justify-content: center;">
+        <button class="btn-secondary" onclick="closeModal('gateModal')">Cancel</button>
+        <button class="btn-admin" onclick="unlockAdmin()"><i class="fa-solid fa-key"></i> Authenticate</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Topic Modal -->
+  <div class="modal-overlay" id="topicModal">
+    <div class="modal-window" style="max-width: 450px;">
+      <h3>Create New Topic</h3>
+      <div class="form-group">
+        <label>Topic Name</label>
+        <input type="text" id="newTopicInput" class="form-control" placeholder="e.g. Research, Notes">
+      </div>
+      <div class="modal-btns">
+        <button class="btn-secondary" onclick="closeModal('topicModal')">Cancel</button>
+        <button class="btn-admin" onclick="saveTopic()">Add Topic</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Resource Modal -->
+  <div class="modal-overlay" id="resourceModal">
+    <div class="modal-window">
+      <h3>Upload External Link</h3>
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" id="resTitle" class="form-control" placeholder="Title">
+      </div>
+      <div class="form-group">
+        <label>URL</label>
+        <input type="url" id="resUrl" class="form-control" placeholder="https://...">
+      </div>
+      <div class="form-group">
+        <label>Category</label>
+        <input type="text" id="resCategory" class="form-control" placeholder="Category">
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea id="resDesc" class="form-control" style="min-height: 80px;" placeholder="Description"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Icon Style</label>
+        <select id="resIcon" class="form-control" style="background:#131a33;">
+          <option value="fa-globe">Webpage</option>
+          <option value="fa-file-lines">Document / Paper</option>
+          <option value="fa-video">Video Link</option>
+          <option value="fa-folder-open">Drive Resource</option>
+        </select>
+      </div>
+      <div class="modal-btns">
+        <button class="btn-secondary" onclick="closeModal('resourceModal')">Cancel</button>
+        <button class="btn-admin" onclick="saveResource()">Upload</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Article Modal -->
+  <div class="modal-overlay" id="articleModal">
+    <div class="modal-window">
+      <h3>Write Article</h3>
+      <div class="form-group">
+        <label>Article Title</label>
+        <input type="text" id="postTitle" class="form-control" placeholder="Headline">
+      </div>
+      <div class="form-group">
+        <label>Topic</label>
+        <select id="postTopic" class="form-control" style="background:#131a33;"></select>
+      </div>
+      <div class="form-group">
+        <label>Content</label>
+        <textarea id="postContent" class="form-control" placeholder="Write article..."></textarea>
+      </div>
+      <div class="form-group">
+        <label>Attach Reference Link (Optional)</label>
+        <input type="url" id="postRefLink" class="form-control" placeholder="https://...">
+      </div>
+      <div class="modal-btns">
+        <button class="btn-secondary" onclick="closeModal('articleModal')">Cancel</button>
+        <button class="btn-admin" onclick="saveArticle()">Publish</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Bio Modal -->
+  <div class="modal-overlay" id="bioModal">
+    <div class="modal-window">
+      <h3>Update Bio</h3>
+      <div class="form-group">
+        <label>About Me Content</label>
+        <textarea id="bioInput" class="form-control" style="min-height: 200px;"></textarea>
+      </div>
+      <div class="modal-btns">
+        <button class="btn-secondary" onclick="closeModal('bioModal')">Cancel</button>
+        <button class="btn-admin" onclick="saveBio()">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reader Modal -->
+  <div class="modal-overlay" id="readerModal">
+    <div class="modal-window" style="max-width: 800px;">
+      <div style="border-bottom: 1px solid var(--card-border); padding-bottom: 1.2rem; margin-bottom: 1.5rem;">
+        <div class="article-tag" id="readerTag"></div>
+        <h2 id="readerTitle" style="font-family:'Space Grotesk'; font-size:2rem; margin: 0.5rem 0; color:#fff;"></h2>
+        <div style="font-size:0.85rem; color:var(--text-muted);" id="readerMeta"></div>
+        <div id="readerLinkContainer" style="margin-top: 12px;"></div>
+      </div>
+      <div style="font-size: 1.08rem; line-height: 1.9; color: #e2e8f0; white-space: pre-line;" id="readerContent"></div>
+      <div class="modal-btns" style="margin-top:2.2rem;">
+        <button class="btn-secondary" onclick="closeModal('readerModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const AUTH_KEY = "MTdAMjE=";
+
+    function verifyAuth(input) {
+      try {
+        return btoa(input) === AUTH_KEY;
+      } catch(e) {
+        return false;
+      }
+    }
+
+    let isAdmin = false;
+    let currentFilter = 'all';
+
+    let topics = JSON.parse(localStorage.getItem('ds_topics')) || ["Perspectives", "Notes"];
+    let resources = JSON.parse(localStorage.getItem('ds_resources')) || [];
+    let articles = JSON.parse(localStorage.getItem('ds_articles')) || [
+      {
+        id: 1,
+        title: "Welcome to My Official Platform",
+        topic: "Perspectives",
+        content: "This website serves as the direct repository of my writings, perspectives, and articles. As the author, I curate topics and publish essays directly here.\n\nVisitors can read and explore without distractions, submit queries through the portal, and reach me directly via my verified email address.",
+        refLink: "",
+        date: "October 2026"
+      }
+    ];
+
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    const savedBio = localStorage.getItem('ds_bio');
+    if (savedBio) document.getElementById('bioText').textContent = savedBio;
+
+    function copyEmail() {
+      const email = "singhbhvya.2117@gmail.com";
+      navigator.clipboard.writeText(email).then(() => {
+        const btnText = document.getElementById('copyBtnText');
+        btnText.textContent = "Copied!";
+        setTimeout(() => { btnText.textContent = "Copy Email"; }, 2000);
+      });
+    }
+
+    function handleQuerySubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('qName').value.trim();
+      const email = document.getElementById('qEmail').value.trim();
+      const category = document.getElementById('qCategory').value;
+      const subject = document.getElementById('qSubject').value.trim();
+      const message = document.getElementById('qMessage').value.trim();
+
+      const mailtoSubject = encodeURIComponent(`[${category}] ${subject} - From ${name}`);
+      const mailtoBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nCategory: ${category}\n\nMessage:\n${message}`);
+
+      document.getElementById('querySuccessMsg').style.display = 'block';
+
+      setTimeout(() => {
+        window.location.href = `mailto:singhbhvya.2117@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+      }, 700);
+    }
+
+    function openGateModal() {
+      if (isAdmin) {
+        lockAdmin();
+      } else {
+        document.getElementById('gatePass').value = '';
+        openModal('gateModal');
+        setTimeout(() => document.getElementById('gatePass').focus(), 100);
+      }
+    }
+
+    function unlockAdmin() {
+      const pin = document.getElementById('gatePass').value;
+      if (verifyAuth(pin)) {
+        isAdmin = true;
+        closeModal('gateModal');
+        document.body.classList.add('admin-mode');
+        document.getElementById('adminControls').style.display = 'flex';
+        document.getElementById('editBioBtn').style.display = 'inline-flex';
+        renderArticles();
+        renderResources();
+      } else {
+        alert("Authentication failed. Please check your passcode.");
+      }
+    }
+
+    function lockAdmin() {
+      isAdmin = false;
+      document.body.classList.remove('admin-mode');
+      document.getElementById('adminControls').style.display = 'none';
+      document.getElementById('editBioBtn').style.display = 'none';
+      renderArticles();
+      renderResources();
+    }
+
+    function openModal(id) { document.getElementById(id).classList.add('active'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+
+    function openTopicModal() {
+      document.getElementById('newTopicInput').value = '';
+      openModal('topicModal');
+    }
+
+    function saveTopic() {
+      const val = document.getElementById('newTopicInput').value.trim();
+      if (val && !topics.includes(val)) {
+        topics.push(val);
+        localStorage.setItem('ds_topics', JSON.stringify(topics));
+        renderTopics();
+        closeModal('topicModal');
+      }
+    }
+
+    function renderTopics() {
+      const c = document.getElementById('topicsContainer');
+      c.innerHTML = `<div class="topic-pill ${currentFilter === 'all' ? 'active' : ''}" onclick="filterArticles('all', this)">All Topics</div>`;
+      topics.forEach(t => {
+        const pill = document.createElement('div');
+        pill.className = `topic-pill ${currentFilter === t ? 'active' : ''}`;
+        pill.textContent = t;
+        pill.onclick = () => filterArticles(t, pill);
+        c.appendChild(pill);
+      });
+    }
+
+    function filterArticles(topic, el) {
+      currentFilter = topic;
+      document.querySelectorAll('.topic-pill').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      renderArticles();
+    }
+
+    function openResourceModal() {
+      document.getElementById('resTitle').value = '';
+      document.getElementById('resUrl').value = '';
+      document.getElementById('resCategory').value = '';
+      document.getElementById('resDesc').value = '';
+      openModal('resourceModal');
+    }
+
+    function saveResource() {
+      const title = document.getElementById('resTitle').value.trim();
+      let url = document.getElementById('resUrl').value.trim();
+      const category = document.getElementById('resCategory').value.trim() || 'Resource';
+      const desc = document.getElementById('resDesc').value.trim();
+      const icon = document.getElementById('resIcon').value;
+
+      if (!title || !url) return;
+      if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
+
+      resources.unshift({ id: Date.now(), title, url, category, desc, icon });
+      localStorage.setItem('ds_resources', JSON.stringify(resources));
+      renderResources();
+      closeModal('resourceModal');
+    }
+
+    function deleteResource(id, e) {
+      e.stopPropagation();
+      if (confirm("Delete this link?")) {
+        resources = resources.filter(r => r.id !== id);
+        localStorage.setItem('ds_resources', JSON.stringify(resources));
+        renderResources();
+      }
+    }
+
+    function renderResources() {
+      const grid = document.getElementById('resourcesGrid');
+      grid.innerHTML = '';
+      if (resources.length === 0) {
+        grid.innerHTML = `<div style="text-align:center; padding:2rem; color:var(--text-sub); grid-column:1/-1;">No verified links uploaded yet.</div>`;
+        return;
+      }
+      resources.forEach(r => {
+        const card = document.createElement('div');
+        card.className = 'resource-card';
+        card.innerHTML = `
+          <div>
+            <div class="resource-top">
+              <div class="resource-icon"><i class="fa-solid ${r.icon}"></i></div>
+              <div class="resource-info">
+                <span>${r.category}</span>
+                <h4>${r.title}</h4>
+              </div>
+            </div>
+            <p class="resource-desc">${r.desc || 'No description provided.'}</p>
+          </div>
+          <div class="resource-bottom">
+            <a href="${r.url}" target="_blank" rel="noopener noreferrer" class="resource-link-btn">
+              Explore Resource <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <div class="card-actions">
+              <button class="btn-icon del" onclick="deleteResource(${r.id}, event)"><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function openArticleModal() {
+      const sel = document.getElementById('postTopic');
+      sel.innerHTML = '';
+      topics.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t;
+        opt.textContent = t;
+        sel.appendChild(opt);
+      });
+      document.getElementById('postTitle').value = '';
+      document.getElementById('postContent').value = '';
+      document.getElementById('postRefLink').value = '';
+      openModal('articleModal');
+    }
+
+    function saveArticle() {
+      const title = document.getElementById('postTitle').value.trim();
+      const topic = document.getElementById('postTopic').value;
+      const content = document.getElementById('postContent').value.trim();
+      let refLink = document.getElementById('postRefLink').value.trim();
+
+      if (!title || !content) return;
+      if (refLink && !/^https?:\/\//i.test(refLink)) refLink = 'https://' + refLink;
+
+      const dateStr = new Date().toLocaleDateString("en-US", { month: 'short', year: 'numeric' });
+      articles.unshift({ id: Date.now(), title, topic, content, refLink, date: dateStr });
+      localStorage.setItem('ds_articles', JSON.stringify(articles));
+      renderArticles();
+      closeModal('articleModal');
+    }
+
+    function deleteArticle(id, e) {
+      e.stopPropagation();
+      if (confirm("Delete article?")) {
+        articles = articles.filter(a => a.id !== id);
+        localStorage.setItem('ds_articles', JSON.stringify(articles));
+        renderArticles();
+      }
+    }
+
+    function readArticle(id) {
+      const art = articles.find(a => a.id === id);
+      if (!art) return;
+      document.getElementById('readerTag').textContent = art.topic;
+      document.getElementById('readerTitle').textContent = art.title;
+      document.getElementById('readerMeta').textContent = `By DEBANSHI SINGH • ${art.date}`;
+      document.getElementById('readerContent').textContent = art.content;
+
+      const linkContainer = document.getElementById('readerLinkContainer');
+      if (art.refLink) {
+        linkContainer.innerHTML = `<a href="${art.refLink}" target="_blank" rel="noopener noreferrer" style="color:var(--neon-cyan); font-size:0.9rem; text-decoration:none;"><i class="fa-solid fa-link"></i> Attached Resource</a>`;
+      } else {
+        linkContainer.innerHTML = '';
+      }
+      openModal('readerModal');
+    }
+
+    function renderArticles() {
+      const grid = document.getElementById('articlesGrid');
+      grid.innerHTML = '';
+      const filtered = currentFilter === 'all' ? articles : articles.filter(a => a.topic === currentFilter);
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div style="text-align:center; padding:2rem; color:var(--text-sub); grid-column:1/-1;">No articles under this topic.</div>`;
+        return;
+      }
+
+      filtered.forEach(art => {
+        const card = document.createElement('div');
+        card.className = 'article-card';
+        card.onclick = () => readArticle(art.id);
+        card.innerHTML = `
+          <div>
+            <div class="article-tag">${art.topic}</div>
+            <h3 class="article-title">${art.title}</h3>
+            <p class="article-snippet">${art.content}</p>
+          </div>
+          <div class="article-meta">
+            <span>${art.date}</span>
+            <div class="card-actions">
+              <button class="btn-icon del" onclick="deleteArticle(${art.id}, event)"><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function openBioModal() {
+      document.getElementById('bioInput').value = document.getElementById('bioText').textContent.trim();
+      openModal('bioModal');
+    }
+
+    function saveBio() {
+      const txt = document.getElementById('bioInput').value.trim();
+      if (txt) {
+        document.getElementById('bioText').textContent = txt;
+        localStorage.setItem('ds_bio', txt);
+      }
+      closeModal('bioModal');
+    }
+
+    renderTopics();
+    renderResources();
+    renderArticles();
+  </script>
+</body>
+</html>
